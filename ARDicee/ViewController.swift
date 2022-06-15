@@ -31,6 +31,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         node.position = SCNVector3(0, 0.1, -0.5)
         
+        node.geometry = cube
+        
+        sceneView.scene.rootNode.addChildNode(node)
       
 //        // Create a new scene
 //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
