@@ -31,6 +31,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        print("World Tracking is supported = \(ARWorldTrackingConfiguration.isSupported)")
 
         // Run the view's session
         sceneView.session.run(configuration)
