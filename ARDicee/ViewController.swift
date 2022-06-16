@@ -97,13 +97,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 
             }
         }
+    }
         func rollAll() {
             if !diceArray.isEmpty {
                 for dice in diceArray {
                     roll(dice:dice)
                 }
             }
-        }
     }
     
     func roll(dice: SCNNode){
@@ -115,6 +115,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                                               z: CGFloat(randomZ * 5),
                                               duration: 0.5)
         )
+    }
+    
+    @IBAction func rollAgain(_ sender: UIBarButtonItem) {
+        rollAll()
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
