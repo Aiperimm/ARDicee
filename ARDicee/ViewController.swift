@@ -82,11 +82,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
        
                diceNode.position = SCNVector3(
                 x: hitResult.worldTransform.columns.3.x,
-                y: hitResult.worldTransform.columns.3.y,
+                y: hitResult.worldTransform.columns.3.y + diceNode.boundingSphere.radius,
                 z: hitResult.worldTransform.columns.3.z
                )
        
                sceneView.scene.rootNode.addChildNode(diceNode)
+                   
+                   let randomX = Float (arc4random_uniform(4) + 1) * (Float.pi/2)
        
                }
                 
